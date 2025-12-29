@@ -1,7 +1,5 @@
-const API_BASE = import.meta.env.VITE_API_BASE_URL;
-
-if (!API_BASE) {
-  console.error("VITE_API_BASE_URL is not defined");
-}
+const API_BASE =
+  import.meta.env.VITE_API_BASE ||
+  "https://feelix-yi2p.onrender.com";
 
 export default API_BASE;
