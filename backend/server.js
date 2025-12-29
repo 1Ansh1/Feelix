@@ -62,6 +62,11 @@ app.post("/api/analyze", async (req, res) => {
 const analyticsRoutes = require("./routes/analyticsRoutes");
 app.use("/api/analytics", analyticsRoutes);
 
+app.get("/", (req, res) => {
+  res.send("Feelix API is running 🚀");
+});
+
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
