@@ -4,8 +4,23 @@ require("dotenv").config();
 
 const Feedback = require("./models/Feedback");
 
+const cors = require("cors");
+
 const app = express();
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",      // local dev
+      "https://feelix.vercel.app",  // production frontend
+    ],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
+
 
 // ✅ MongoDB connection
 mongoose
