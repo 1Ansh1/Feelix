@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const Feedback = require("./models/feedback");
+const Feedback = require("./models/Feedback");
 
 const app = express();
 app.use(express.json());
