@@ -30,6 +30,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+import API_BASE from "../config/api";
+
 const COLORS = {
   POSITIVE: "#38A169",
   NEGATIVE: "#E53E3E",
@@ -40,7 +42,7 @@ const Analytics = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get("/api/analytics/summary").then((res) => {
+    axios.get(`${API_BASE}/api/analytics/summary`).then((res) => {
       setData(res.data);
     });
   }, []);

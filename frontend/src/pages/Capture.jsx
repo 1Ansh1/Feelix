@@ -12,6 +12,7 @@ import FaceEmotion from "../components/FaceEmotion";
 import SpeechToText from "../components/SpeechToText";
 import { useState } from "react";
 import axios from "axios";
+import API_BASE from "../config/api";
 
 const Capture = () => {
   const [sentiment, setSentiment] = useState("");
@@ -21,7 +22,7 @@ const Capture = () => {
   const handleTranscript = async (text) => {
     try {
       setLoading(true);
-      const res = await axios.post("/api/analyze", { text });
+      const res = await axios.post(`${API_BASE}/api/analyze`, { text });
       setSentiment(res.data.sentiment);
       setConfidence(res.data.confidence);
     } catch (err) {
