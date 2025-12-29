@@ -3,6 +3,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://feelix-yi2p.onrender.com/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
